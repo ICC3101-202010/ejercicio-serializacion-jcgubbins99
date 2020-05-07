@@ -72,6 +72,7 @@ namespace Ejercicio_Serialización
             {
                 IFormatter formatter2 = new BinaryFormatter();
                 Stream stream = new FileStream("Usuarios.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+                formatter.Serialize(stream, listapersonas);
                 p = (List<Person>)formatter2.Deserialize(stream);
                 stream.Close();
                 VerPersonas(p);
